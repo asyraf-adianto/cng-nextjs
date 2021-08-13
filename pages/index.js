@@ -10,10 +10,10 @@ export default function Index() {
     <>
       <IndexNavbar fixed />
       <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
-        <div className="container mx-auto items-center flex flex-wrap">
+        <div className="container mx-auto items-center flex flex-wrap ">
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
-              <h2 className="font-semibold text-4xl text-blueGray-600">
+              <h2 className="font-semibold text-4xl text-blueGray-600 bg-blue-900">
                 Notus NextJS - A beautiful extension for Tailwind CSS.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
@@ -49,14 +49,14 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <img
+        {/* <img
           className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860-px"
           src="/img/pattern_nextjs.png"
           alt="..."
-        />
+        /> */}
       </section>
 
-      <section className="mt-48 md:mt-40 pb-40 relative bg-blueGray-100">
+      {/* <section className="mt-48 md:mt-40 pb-40 relative bg-blueGray-100">
         <div
           className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20"
           style={{ transform: "translateZ(0)" }}
@@ -661,7 +661,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

@@ -13,6 +13,9 @@ module.exports = {
     colors: {
       ...colors,
     },
+    fontSize: {
+      "xxs": ".5rem"
+    },
     extend: {
       minHeight: {
         "screen-75": "75vh",
