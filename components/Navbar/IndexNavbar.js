@@ -6,15 +6,31 @@ import IndexDropdown from "../../components/Dropdown/IndexDropdown.js";
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const darkModeTemplate = " bg-gray-800 text-white ";
+  const lightModeTemplate = " bg-white text-blueGray-700 "
+  const [darkMode, setDarkMode] = React.useState(false);
+  const activateDarkMode = () => {
+    setDarkMode(true);
+  };
+  const deactivateDarkMode = () => {
+    setDarkMode(false);
+  };
   return (
     <>
-      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
+      <nav className={
+        "top-0 fixed z-50 w-full flex-wrap items-center justify-between px-2 py-0 navbar-expand-lg shadow" +
+        (
+          darkMode ? 
+          lightModeTemplate : 
+          darkModeTemplate
+        )
+      }>
         <div className="container divide-x px-4 mx-auto flex flex-wrap items-center justify-between">
           {/* Product Logo */}
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">
               <a
-                className="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+                className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
                 href="#"
               >
                 Chronus NG
@@ -41,15 +57,6 @@ export default function Navbar(props) {
                 >
                   <i className="text-blueGray-400 fas fa-users text-lg leading-lg mr-2" />{" "}
                   Team
-                </a>
-              </li>
-              <li className="flex items-center">
-                <a
-                  className="hover:text-blueGray-500 text-emerald-500 px-3 py-4 lg:py-2 flex items-center uppercase font-bold"
-                  href="/#"
-                >
-                  <i className="fas fa-tasks text-lg leading-lg mr-2" />{" "}
-                  Assignment
                 </a>
               </li>
               <li className="flex items-center">
@@ -137,10 +144,38 @@ export default function Navbar(props) {
 
               <li className="flex items-center">
                 <button
-                  className="bg-blueGray-700 text-white active:bg-blueGray-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                  className={
+                    " bg-blueGray-700 text-white active:bg-blueGray-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150" +
+                    (
+                      darkMode ? 
+                      " block " : 
+                      " hidden "
+                    )
+                  }
                   type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    darkMode ? deactivateDarkMode() : activateDarkMode();
+                  }}
                 >
-                  <i className="fas fa-arrow-alt-circle-down"></i> Download
+                  <i className="fas fa-arrow-alt-circle-down"></i> Dark Mode
+                </button>
+                <button
+                  className={
+                    " bg-white text-blueGray-700 active:bg-blueGray-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150" +
+                    (
+                      darkMode ? 
+                      " hidden " : 
+                      " block "
+                    )
+                  }
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    darkMode ? deactivateDarkMode() : activateDarkMode();
+                  }}
+                >
+                  <i className="fas fa-arrow-alt-circle-down"></i> Light Mode
                 </button>
               </li>
             </ul>
