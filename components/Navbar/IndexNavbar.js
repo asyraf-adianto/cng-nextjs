@@ -36,6 +36,15 @@ export default function Navbar(props) {
             <ul className="flex flex-col lg:flex-row list-none mr-auto text-xxs">
               <li className="flex items-center">
                 <a
+                  className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center uppercase font-bold"
+                  href="/#"
+                >
+                  <i className="text-blueGray-400 fas fa-users text-lg leading-lg mr-2" />{" "}
+                  Team
+                </a>
+              </li>
+              <li className="flex items-center">
+                <a
                   className="hover:text-blueGray-500 text-emerald-500 px-3 py-4 lg:py-2 flex items-center uppercase font-bold"
                   href="/#"
                 >
@@ -86,15 +95,6 @@ export default function Navbar(props) {
                 >
                   <i className="text-blueGray-400 fas fa-gas-pump text-lg leading-lg mr-2" />{" "}
                   Fuel
-                </a>
-              </li>
-              <li className="flex items-center">
-                <a
-                  className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center uppercase font-bold"
-                  href="/#"
-                >
-                  <i className="text-blueGray-400 fas fa-users text-lg leading-lg mr-2" />{" "}
-                  Team
                 </a>
               </li>
             </ul>
